@@ -15,6 +15,16 @@ public class PlayerScript : MonoBehaviour {
         float inputY = Input.GetAxis("Vertical");
 
         movement = new Vector2(speed.x * inputX, speed.y * inputY);
+
+        // shooting for the player
+        bool shoot = Input.GetButtonDown("Fire1");
+        shoot |= Input.GetButtonDown("Fire2");
+
+        if (shoot)
+        {
+            WeaponScript weapon = GetComponent<WeaponScript>();
+            if (weapon != null) { weapon.Attack(false); }
+        }
 	}
 
     void FixedUpdate()
@@ -22,4 +32,5 @@ public class PlayerScript : MonoBehaviour {
         rigidbody2D.velocity = movement;
     }
 
+    public Vector2 getMovement() { return movement; }
 }
