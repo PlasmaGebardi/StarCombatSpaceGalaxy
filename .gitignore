@@ -2,8 +2,6 @@
 ## Unityä varten
 #################
 
-Library/
-Temp/
 
 #################
 ## Eclipse
@@ -64,7 +62,7 @@ build/
 *_i.c
 *_p.c
 *.ilk
-*.meta
+#*.meta
 *.obj
 *.pch
 *.pdb
