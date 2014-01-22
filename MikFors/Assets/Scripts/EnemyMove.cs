@@ -15,13 +15,12 @@ public class EnemyMove : MonoBehaviour
     /// <summary>
     /// Moving direction
     /// </summary>
-    public Vector2 direction = new Vector2(-1, 0);
+    public Vector2 direction = new Vector2(-1, 0.2f);
 
     private Vector2 movement;
-
     void Update()
     {
-        // 2 - Movement
+
         movement = new Vector2(
           speed.x * direction.x,
           speed.y * direction.y);
