@@ -9,6 +9,9 @@ public class HealthScript : MonoBehaviour {
     // Friend or foe, default for enemy
     public bool isEnemy = true;
 
+    // is it an asteroid
+    public bool isAsteroid = false;
+
     // damage inflicted on collision
     public int collDam = 1;
 
@@ -39,6 +42,8 @@ public class HealthScript : MonoBehaviour {
 
                 // upon collision, check if collible object
                 if (health.isEnemy) { Destroy(health.gameObject); }
+
+                // destroy player if health reaches zero
                 if (hp <= 0) { Destroy(gameObject); }
             }
         }
