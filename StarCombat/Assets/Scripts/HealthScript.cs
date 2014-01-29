@@ -30,7 +30,10 @@ public class HealthScript : MonoBehaviour {
                 // upon collision, the shot is destroyed
                 Destroy(shot.gameObject);
 
-                if (hp <= 0) { Destroy(gameObject); }
+                if (hp <= 0)
+				{
+					SpecialEffectsHelper.Instance.Explosion(transform.position);
+					Destroy(gameObject); }
             }
         }
         else if (health != null)
@@ -44,7 +47,9 @@ public class HealthScript : MonoBehaviour {
                 if (health.isEnemy) { Destroy(health.gameObject); }
 
                 // destroy player if health reaches zero
-                if (hp <= 0) { Destroy(gameObject); }
+                if (hp <= 0) { 
+					SpecialEffectsHelper.Instance.Explosion(transform.position);
+					Destroy(gameObject); }
             }
         }
     }
