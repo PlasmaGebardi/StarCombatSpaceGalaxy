@@ -6,7 +6,7 @@
 public class EnemyScript : MonoBehaviour
 {
 	private bool hasSpawn;
-	private MoveScript moveScript;
+	private EnemyMove moveScript;
 	private WeaponScript[] weapons;
 	
 	void Awake()
@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
 		weapons = GetComponentsInChildren<WeaponScript>();
 		
 		// Retrieve scripts to disable when not spawn
-		moveScript = GetComponent<MoveScript>();
+		moveScript = GetComponent<EnemyMove>();
 	}
 	
 	// 1 - Disable everything
