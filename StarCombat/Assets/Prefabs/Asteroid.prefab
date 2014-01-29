@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -42,8 +43,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: -.642787635, w: .766044497}
-  m_LocalPosition: {x: 5.05268717, y: .270090103, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .342020214, w: -.939692616}
+  m_LocalPosition: {x: 6.02252483, y: 2.64416623, z: 0}
   m_LocalScale: {x: .25999999, y: .300000012, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -111,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 1
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -126,8 +127,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4ff01af1e8cd1499f26a70ee2f6494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 400000, guid: 201b52e817586d74cb51aa5e61623dfd, type: 2}
-  shootingRate: .600000024
+  shotPrefab: {fileID: 400000, guid: be063bd4aa41d384fa4b2f4f1b1013db, type: 2}
+  shootingRate: 0
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4167d642dc40b84c912351491124804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rpm: 0
+  splits: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

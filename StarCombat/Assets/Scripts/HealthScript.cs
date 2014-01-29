@@ -15,11 +15,18 @@ public class HealthScript : MonoBehaviour {
     // damage inflicted on collision
     public int collDam = 1;
 
+    //Store weaponscripts
+    private WeaponScript weaponscript;
+    private Asteroidittaja asteroidittaja;
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         // is it a shot?
         ShotScript shot = collider.gameObject.GetComponent<ShotScript>();
         HealthScript health = collider.gameObject.GetComponent<HealthScript>();
+        weaponscript = GetComponentInChildren<WeaponScript>();
+        asteroidittaja = GetComponent<Asteroidittaja>();
+
         if (shot != null)
         {
             // no friendly fire
@@ -32,6 +39,20 @@ public class HealthScript : MonoBehaviour {
 
                 if (hp <= 0)
 				{
+                    if (isAsteroid == true)
+                    {
+                        var weapon = transform.FindChild("WeaponObject");
+                        int splits = asteroidittaja.getSplits();
+                        for (int i = 0; i < splits; i++)
+                        {
+
+                            int rndm = Random.Range(1, 360);
+                            weapon.transform.Rotate(0, 0, rndm);
+                            weaponscript.Attack(true);
+                            print("asd");
+                        }
+
+                    }
 					SpecialEffectsHelper.Instance.Explosion(transform.position);
 					Destroy(gameObject); }
             }
