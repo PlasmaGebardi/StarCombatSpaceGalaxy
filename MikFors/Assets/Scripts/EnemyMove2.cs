@@ -16,7 +16,7 @@ public class EnemyMove2 : MonoBehaviour
     /// Moving direction
     /// </summary>
     public Vector2 direction = new Vector2(-1, 0.2f);
-
+    public bool towardsPlayer;
     private Vector2 movement;
     private int count;
     void Update()
@@ -35,9 +35,18 @@ public class EnemyMove2 : MonoBehaviour
             count = 0;
         }
         count++;
-        movement = new Vector2(
-          speed.x * direction.x,
-          speed.y * direction.y);
+        if (towardsPlayer == false)
+        {
+            movement = new Vector2(
+              speed.x * direction.x,
+              speed.y * direction.y);
+        }
+        else if (towardsPlayer == true)
+        {
+            movement = new Vector2(
+            speed.x * direction.x,
+            speed.y * GameObject.Find("Player").transform.position.y);
+        }
     }
 
     void FixedUpdate()
