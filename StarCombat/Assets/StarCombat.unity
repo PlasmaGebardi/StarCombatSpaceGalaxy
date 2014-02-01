@@ -714,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 3
   isEnemy: 1
   isAsteroid: 0
@@ -953,6 +954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 3
   isEnemy: 1
   isAsteroid: 0
@@ -1281,6 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 3
   isEnemy: 1
   isAsteroid: 0
@@ -1430,6 +1433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 1
   isEnemy: 1
   isAsteroid: 1
@@ -1582,6 +1586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 3
   isEnemy: 1
   isAsteroid: 0
@@ -1822,6 +1827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 1
   isEnemy: 1
   isAsteroid: 1
@@ -2512,7 +2518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  maxhp: 4
+  hp: 4
   isEnemy: 0
   isAsteroid: 0
   collDam: 1
@@ -2652,6 +2659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 1
   isEnemy: 1
   isAsteroid: 1
@@ -2783,6 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 1
   isEnemy: 1
   isAsteroid: 1
@@ -3131,6 +3140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 2
   isEnemy: 1
   isAsteroid: 0
@@ -3398,6 +3408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 1
   isEnemy: 1
   isAsteroid: 1
@@ -3581,6 +3592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 1
   isEnemy: 1
   isAsteroid: 1
@@ -3712,6 +3724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 1
   isEnemy: 1
   isAsteroid: 1
@@ -4161,6 +4174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f2c56bd5a302419c27d87eae78dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 2
   hp: 3
   isEnemy: 1
   isAsteroid: 0

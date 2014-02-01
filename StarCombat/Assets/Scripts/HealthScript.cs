@@ -4,6 +4,7 @@ using System.Collections;
 public class HealthScript : MonoBehaviour {
 
     // Total HP
+    public int maxhp = 2;
     public int hp = 2;
 
     // Friend or foe, default for enemy
@@ -33,7 +34,6 @@ public class HealthScript : MonoBehaviour {
             if (shot.isEnemyShot != isEnemy)
             {
                 hp -= shot.damage;
-
                 // upon collision, the shot is destroyed
                 Destroy(shot.gameObject);
 
@@ -49,7 +49,6 @@ public class HealthScript : MonoBehaviour {
                             int rndm = Random.Range(1, 360);
                             weapon.transform.Rotate(0, 0, rndm);
                             weaponscript.Attack(true);
-                            print("asd");
                         }
 
                     }
