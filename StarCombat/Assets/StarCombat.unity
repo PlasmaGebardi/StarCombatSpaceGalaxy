@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 2
-  hp: 1
+  hp: 2
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 2
-  hp: 1
+  hp: 2
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -2660,7 +2660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 2
-  hp: 1
+  hp: 2
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -2792,7 +2792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 2
-  hp: 1
+  hp: 2
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -2884,6 +2884,10 @@ Prefab:
     - target: {fileID: 11400006, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
       propertyPath: rpm
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: hp
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
@@ -3413,7 +3417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 2
-  hp: 1
+  hp: 2
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -3518,6 +3522,10 @@ Prefab:
       propertyPath: rpm
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
   m_RootGameObject: {fileID: 1318106644}
@@ -3601,7 +3609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 2
-  hp: 1
+  hp: 2
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -3733,7 +3741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 2
-  hp: 1
+  hp: 2
   isEnemy: 1
   isAsteroid: 1
   collDam: 1
@@ -3867,6 +3875,10 @@ Prefab:
       propertyPath: rpm
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
   m_RootGameObject: {fileID: 1461647635}
@@ -3922,6 +3934,10 @@ Prefab:
     - target: {fileID: 11400006, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
       propertyPath: rpm
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: hp
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
@@ -4544,6 +4560,14 @@ Prefab:
       propertyPath: rpm
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
   m_RootGameObject: {fileID: 1484137128}
@@ -4695,6 +4719,14 @@ Prefab:
       propertyPath: rpm
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
   m_RootGameObject: {fileID: 477482143}
@@ -4835,6 +4867,14 @@ Prefab:
     - target: {fileID: 11400006, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
       propertyPath: rpm
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 319c6bc9577474a4fab1728e127a934d, type: 2}
