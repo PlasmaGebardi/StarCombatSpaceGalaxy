@@ -53,6 +53,7 @@ public class HealthScript : MonoBehaviour {
 
                     }
 					SpecialEffectsHelper.Instance.Explosion(transform.position);
+					SoundEffectsHelper.Instance.MakeExplosionSound();
 					Destroy(gameObject); }
             }
         }
@@ -69,6 +70,7 @@ public class HealthScript : MonoBehaviour {
                 // destroy player if health reaches zero
                 if (hp <= 0) { 
 					SpecialEffectsHelper.Instance.Explosion(transform.position);
+					SoundEffectsHelper.Instance.MakeExplosionSound();
 					Destroy(gameObject); }
             }
         }
