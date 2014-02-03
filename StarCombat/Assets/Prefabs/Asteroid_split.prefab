@@ -98,7 +98,7 @@ MonoBehaviour:
   maxhp: 2
   hp: 1
   isEnemy: 1
-  isAsteroid: 0
+  isAsteroid: 1
   collDam: 1
 --- !u!212 &21200000
 SpriteRenderer:

@@ -60,7 +60,7 @@ public class HealthScript : MonoBehaviour {
         else if (health != null)
         {
             // no friendly fire
-            if (health.isEnemy != isEnemy)
+            if (health.isEnemy != isEnemy | isAsteroid)
             {
                 hp -= health.collDam;
 
