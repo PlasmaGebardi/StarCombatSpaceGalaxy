@@ -22,7 +22,7 @@ public class MenuScript : MonoBehaviour {
             )
         )
         {   // launch the first (currently only level)
-            Application.LoadLevel("StarCombat");
+            Application.LoadLevel("Intro");
         }
     }
 

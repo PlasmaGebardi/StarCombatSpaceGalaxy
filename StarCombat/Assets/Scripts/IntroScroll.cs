@@ -23,5 +23,14 @@ public class IntroScroll : MonoBehaviour {
         ControlsStyle.fontSize = 18;
         ControlsStyle.normal.textColor = Color.magenta;
         GUI.Box(new Rect(10, Screen.height - 80, 150, 30), "WASD to move, Mouse1 or ctrl to shoot", ControlsStyle);
+
+        const int buttonWidth = 200;
+        const int buttonHeight = 100;
+
+        if (GUI.Button(
+            new Rect(Screen.width - 230,(Screen.height - 120),buttonWidth,buttonHeight),"Start Game"))
+        {   // launch the first (currently only level)
+            Application.LoadLevel("StarCombat");
+        }
     }
 }
