@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
 	public Vector2 speed = new Vector2(50, 50);
 	// 2 - Store the movement
 	private Vector2 movement;
-
+    public bool disableHealthBar;
     private HealthScript hpscript;
 
     void Start()
@@ -77,11 +77,15 @@ public class PlayerScript : MonoBehaviour
 
     public void OnGUI()
     {
+
         Texture2D back = new Texture2D(1,1);
         back.SetPixel(0, 0, Color.red);
         back.Apply();
         GUI.backgroundColor = Color.red;
-        GUI.Box(new Rect(10, 10, 150, 30), hpscript.hp + "/" + hpscript.maxhp);
+        if (disableHealthBar == false)
+        {
+            GUI.Box(new Rect(10, 10, 150, 30), hpscript.hp + "/" + hpscript.maxhp);
+        }
         //
         GUI.skin.box.normal.background = back;
         GUI.skin.box.fontSize = 15;

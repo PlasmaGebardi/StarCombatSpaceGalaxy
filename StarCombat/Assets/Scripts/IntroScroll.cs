@@ -3,10 +3,21 @@ using System.Collections;
 
 public class IntroScroll : MonoBehaviour {
 
+    private float timer = 23f;
 	// Use this for initialization
 	void Start () {
 	
 	}
+    void Update()
+    {
+
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            Application.LoadLevel("StarCombat");
+        }
+
+    }
 
     void OnGUI()
     {
@@ -22,13 +33,15 @@ public class IntroScroll : MonoBehaviour {
         GUIStyle ControlsStyle = new GUIStyle();
         ControlsStyle.fontSize = 18;
         ControlsStyle.normal.textColor = Color.magenta;
-        GUI.Box(new Rect(10, Screen.height - 80, 150, 30), "WASD to move, Mouse1 or ctrl to shoot", ControlsStyle);
+        GUI.Box(new Rect(10, Screen.height - 80, 150, 30), "WASD to move", ControlsStyle);
+        GUI.Box(new Rect(10, Screen.height - 60, 150, 30), "Mouse1 or ctrl to shoot", ControlsStyle);
 
-        const int buttonWidth = 200;
-        const int buttonHeight = 100;
+        const int buttonWidth = 130;
+        const int buttonHeight = 75;
 
+        GUI.skin.button.fontSize = 20;
         if (GUI.Button(
-            new Rect(Screen.width - 230,(Screen.height - 120),buttonWidth,buttonHeight),"Start Game"))
+            new Rect(Screen.width - 180,(Screen.height - 120),buttonWidth,buttonHeight),"Skip intro"))
         {   // launch the first (currently only level)
             Application.LoadLevel("StarCombat");
         }
