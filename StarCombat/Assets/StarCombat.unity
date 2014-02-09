@@ -3446,7 +3446,7 @@ AudioSource:
   m_GameObject: {fileID: 1554637415}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: c02b48c0bef6e9f4cbe35f21be7b802a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1fc43a8b152ed884fbd03a0ed2b051ef, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .25
   m_Pitch: 1
@@ -4698,6 +4698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 6, y: 6}
+  disableHealthBar: 0
 --- !u!50 &1725243544
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -5051,9 +5052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2c5ed5a79654b48a145cd25e3d4e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionSound: {fileID: 8300000, guid: f484aa3978850ae45935923cacde4985, type: 3}
-  playerShotSound: {fileID: 8300000, guid: 4f5bc98f35a896b4eb561db14657303c, type: 3}
-  enemyShotSound: {fileID: 8300000, guid: d70fd955640dc0c4e92a9304b5347bd9, type: 3}
+  explosionSound: {fileID: 8300000, guid: 2c9dfd03be18bb849badd549ea534689, type: 3}
+  playerShotSound: {fileID: 8300000, guid: c4c8a079a4beb7b439ac5567dba67d5b, type: 3}
+  enemyShotSound: {fileID: 8300000, guid: 41fca864a6db80446ade01a9463fb40b, type: 3}
 --- !u!1001 &1943850730
 Prefab:
   m_ObjectHideFlags: 0
