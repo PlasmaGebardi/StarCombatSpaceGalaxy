@@ -704,6 +704,7 @@ MonoBehaviour:
   hp: 3
   isEnemy: 1
   isAsteroid: 0
+  isSplit: 0
   collDam: 1
 --- !u!50 &276656611
 Rigidbody2D:
@@ -994,6 +995,7 @@ MonoBehaviour:
   hp: 3
   isEnemy: 1
   isAsteroid: 0
+  isSplit: 0
   collDam: 1
 --- !u!61 &364554049
 BoxCollider2D:
@@ -1430,6 +1432,7 @@ MonoBehaviour:
   hp: 3
   isEnemy: 1
   isAsteroid: 0
+  isSplit: 0
   collDam: 1
 --- !u!61 &469290151
 BoxCollider2D:
@@ -1580,6 +1583,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 1
+  isSplit: 0
   collDam: 1
 --- !u!58 &477482148
 CircleCollider2D:
@@ -1733,6 +1737,7 @@ MonoBehaviour:
   hp: 3
   isEnemy: 1
   isAsteroid: 0
+  isSplit: 0
   collDam: 1
 --- !u!61 &511433603
 BoxCollider2D:
@@ -1974,6 +1979,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 1
+  isSplit: 0
   collDam: 1
 --- !u!1 &689445060
 GameObject:
@@ -2100,6 +2106,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 1
+  isSplit: 0
   collDam: 1
 --- !u!58 &867435745
 CircleCollider2D:
@@ -2282,6 +2289,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 1
+  isSplit: 0
   collDam: 1
 --- !u!58 &1041560127
 CircleCollider2D:
@@ -2589,6 +2597,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 0
+  isSplit: 0
   collDam: 1
 --- !u!61 &1270374502
 BoxCollider2D:
@@ -2857,6 +2866,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 1
+  isSplit: 0
   collDam: 1
 --- !u!58 &1318106649
 CircleCollider2D:
@@ -3049,6 +3059,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 1
+  isSplit: 0
   collDam: 1
 --- !u!58 &1461647640
 CircleCollider2D:
@@ -3181,6 +3192,7 @@ MonoBehaviour:
   hp: 2
   isEnemy: 1
   isAsteroid: 1
+  isSplit: 0
   collDam: 1
 --- !u!58 &1484137133
 CircleCollider2D:
@@ -3732,6 +3744,7 @@ MonoBehaviour:
   hp: 3
   isEnemy: 1
   isAsteroid: 0
+  isSplit: 0
   collDam: 1
 --- !u!58 &1707504114
 CircleCollider2D:
@@ -3839,6 +3852,7 @@ MonoBehaviour:
   hp: 4
   isEnemy: 0
   isAsteroid: 0
+  isSplit: 0
   collDam: 1
 --- !u!114 &1725243540
 MonoBehaviour:

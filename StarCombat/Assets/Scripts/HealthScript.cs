@@ -13,6 +13,9 @@ public class HealthScript : MonoBehaviour {
     // is it an asteroid
     public bool isAsteroid = false;
 
+    // is it an asteroid split
+    public bool isSplit = false;
+
     // damage inflicted on collision
     public int collDam = 1;
 
@@ -39,7 +42,7 @@ public class HealthScript : MonoBehaviour {
 
                 if (hp <= 0)
 				{
-                    if (isAsteroid == true)
+                    if (isAsteroid == true && isSplit == false)
                     {
                         var weapon = transform.FindChild("WeaponObject");
                         int splits = asteroidittaja.getSplits();
