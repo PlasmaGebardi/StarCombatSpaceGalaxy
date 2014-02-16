@@ -68,7 +68,10 @@ public class HealthScript : MonoBehaviour {
                 hp -= health.collDam;
 
                 // upon collision, check if collible object
-                if (health.isEnemy) { Destroy(health.gameObject); }
+				if (health.isEnemy) { 
+					SpecialEffectsHelper.Instance.Explosion(transform.position);
+					SoundEffectsHelper.Instance.MakeExplosionSound();
+					Destroy(health.gameObject); }
 
                 // destroy player if health reaches zero
                 if (hp <= 0) { 
