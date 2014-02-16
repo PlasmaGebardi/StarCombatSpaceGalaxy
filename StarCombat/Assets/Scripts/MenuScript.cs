@@ -23,7 +23,6 @@ public class MenuScript : MonoBehaviour {
         )
         {   // launch the first (currently only level)
             Application.LoadLevel("Intro");
-            Debug.Log("homoja kaikki");
         }
     }
 
