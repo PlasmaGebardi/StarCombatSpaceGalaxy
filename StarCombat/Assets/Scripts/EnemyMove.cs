@@ -18,14 +18,15 @@ public class EnemyMove : MonoBehaviour
     public Vector2 direction = new Vector2(-1, 0.2f);
     public bool towardsPlayer;
     public bool waveMode;
+	public bool boss;
 
     private Vector2 movement;
     private int count;
-    void Update()
+	void Update()
     {
         // 2 - Movement
 
-        if (waveMode == true) count++;
+		if (waveMode == true) count++;
      
             if (count == 50)
             {
@@ -41,7 +42,15 @@ public class EnemyMove : MonoBehaviour
             }
         
 
-        if (towardsPlayer == false)
+		if (boss == true) {
+			speed.x = 1f;
+			speed.y = 1f;
+			direction.y = 0f;
+			direction.x = 0.1f;
+		}
+
+
+		if (towardsPlayer == false)
         {
             movement = new Vector2(
               speed.x * direction.x,
