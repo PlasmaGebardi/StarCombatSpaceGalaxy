@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Timers;
 
 /// <summary>
 /// Simply moves the current game object
@@ -18,7 +19,6 @@ public class EnemyMove : MonoBehaviour
     public Vector2 direction = new Vector2(-1, 0.2f);
     public bool towardsPlayer;
     public bool waveMode;
-	public bool boss;
 
     private Vector2 movement;
     private int count;
@@ -40,14 +40,8 @@ public class EnemyMove : MonoBehaviour
                 }
                 count = 0;
             }
-        
 
-		if (boss == true) {
-			speed.x = 1f;
-			speed.y = 1f;
-			direction.y = 0f;
-			direction.x = 0.1f;
-		}
+
 
 
 		if (towardsPlayer == false)
@@ -63,6 +57,7 @@ public class EnemyMove : MonoBehaviour
             speed.y * GameObject.Find("Player").transform.position.y);
         }
     }
+
 
     void FixedUpdate()
     {

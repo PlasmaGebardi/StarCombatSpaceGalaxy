@@ -8,6 +8,7 @@ public class EnemyScript : MonoBehaviour
 	private bool hasSpawn;
 	private EnemyMove moveScript;
 	private WeaponScript[] weapons;
+    private BossScript bossScript;
 	
 	void Awake()
 	{
@@ -16,6 +17,11 @@ public class EnemyScript : MonoBehaviour
 		
 		// Retrieve scripts to disable when not spawn
 		moveScript = GetComponent<EnemyMove>();
+
+        if (GetComponent<BossScript>())
+        {
+            bossScript = GetComponent<BossScript>();
+        }
 	}
 	
 	// 1 - Disable everything
@@ -29,6 +35,10 @@ public class EnemyScript : MonoBehaviour
 		// -- Moving
 		moveScript.enabled = false;
 		// -- Shooting
+        if (bossScript)
+        {
+            bossScript.enabled = false;
+        }
 		foreach (WeaponScript weapon in weapons)
 		{
 			weapon.enabled = false;
@@ -76,6 +86,11 @@ public class EnemyScript : MonoBehaviour
 		// -- Moving
 		moveScript.enabled = true;
 		// -- Shooting
+
+        if (bossScript)
+        {
+            bossScript.enabled = true;
+        }
 		foreach (WeaponScript weapon in weapons)
 		{
 			weapon.enabled = true;
