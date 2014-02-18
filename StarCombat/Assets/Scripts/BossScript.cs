@@ -13,7 +13,7 @@ public class BossScript : MonoBehaviour {
         if (renderer.IsVisibleFrom(Camera.main) == true)
         {
             moveScript = GetComponent<EnemyMove>();
-            System.Timers.Timer aTimer = new System.Timers.Timer();
+            //System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             aTimer.Interval = time;
             aTimer.Enabled = true;
@@ -30,5 +30,10 @@ public class BossScript : MonoBehaviour {
         aTimer.Enabled = false;
     }
 
-
+    public void OnDeath()
+    {
+        SpecialEffectsHelper.Instance.Explosion(transform.position);
+        SoundEffectsHelper.Instance.MakeExplosionSound();
+        Destroy(gameObject);
+    }
 }

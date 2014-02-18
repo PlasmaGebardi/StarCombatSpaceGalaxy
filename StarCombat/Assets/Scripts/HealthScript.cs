@@ -22,6 +22,7 @@ public class HealthScript : MonoBehaviour {
     //Store weaponscripts
     private WeaponScript weaponscript;
     private Asteroidittaja asteroidittaja;
+    private BossScript bossScript;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -30,6 +31,11 @@ public class HealthScript : MonoBehaviour {
         HealthScript health = collider.gameObject.GetComponent<HealthScript>();
         weaponscript = GetComponentInChildren<WeaponScript>();
         asteroidittaja = GetComponent<Asteroidittaja>();
+
+        if(GetComponent<BossScript>())
+        {
+            bossScript = GetComponent<BossScript>();
+        }
 
         if (shot != null)
         {
@@ -55,9 +61,17 @@ public class HealthScript : MonoBehaviour {
                         }
 
                     }
-					SpecialEffectsHelper.Instance.Explosion(transform.position);
-					SoundEffectsHelper.Instance.MakeExplosionSound();
-					Destroy(gameObject); }
+                    if (!bossScript)
+                    {
+                        SpecialEffectsHelper.Instance.Explosion(transform.position);
+                        SoundEffectsHelper.Instance.MakeExplosionSound();
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        bossScript.OnDeath();
+                    }
+                }
             }
         }
         else if (health != null)
