@@ -105,7 +105,7 @@ public class PlayerScript : MonoBehaviour
     public void Fade()
     {
         obje.guiTexture.enabled = true;
-        timer = new System.Timers.Timer(3);
+        timer = new System.Timers.Timer(10);
         timer.Elapsed += new ElapsedEventHandler(FlashHelp);
         timer.Enabled = true;
 
