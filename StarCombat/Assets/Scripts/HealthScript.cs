@@ -23,7 +23,7 @@ public class HealthScript : MonoBehaviour {
     private WeaponScript weaponscript;
     private Asteroidittaja asteroidittaja;
     private BossScript bossScript;
-
+    private PlayerScript playerScript;
     void OnTriggerEnter2D(Collider2D collider)
     {
         // is it a shot?
@@ -37,6 +37,11 @@ public class HealthScript : MonoBehaviour {
             bossScript = GetComponent<BossScript>();
         }
 
+        if (GetComponent<PlayerScript>())
+        {
+            playerScript = GetComponent<PlayerScript>();
+        }
+
         if (shot != null)
         {
             // no friendly fire
@@ -44,6 +49,10 @@ public class HealthScript : MonoBehaviour {
             {
                 hp -= shot.damage;
                 // upon collision, the shot is destroyed
+                if (playerScript)
+                {
+                    playerScript.Fade();
+                }
                 Destroy(shot.gameObject);
 
                 if (hp <= 0)
@@ -80,7 +89,10 @@ public class HealthScript : MonoBehaviour {
             if (health.isEnemy != isEnemy | isAsteroid)
             {
                 hp -= health.collDam;
-
+                if (playerScript)
+                {
+                    playerScript.Fade();
+                }
                 // upon collision, check if collible object
 				if (health.isEnemy) {
                     if (!bossScript)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Timers;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -9,10 +10,14 @@ public class PlayerScript : MonoBehaviour
 	private Vector2 movement;
     public bool disableHealthBar;
     private HealthScript hpscript;
+    private GameObject obje;
+    private System.Timers.Timer timer;
+    private bool helper = false;
 
     void Start()
     {
         hpscript = GetComponent<HealthScript>();
+        obje = GameObject.Find("ScreenFlash");
     }
 	void Update()
 	{
@@ -66,6 +71,12 @@ public class PlayerScript : MonoBehaviour
 			transform.position.z
 			);
 
+        if (helper == true)
+        {
+            obje.guiTexture.enabled = false;
+            helper = false;
+        }
+
 	}
 	
 	void FixedUpdate()
@@ -86,10 +97,27 @@ public class PlayerScript : MonoBehaviour
         {
             GUI.Box(new Rect(10, 10, 150, 30), hpscript.hp + "/" + hpscript.maxhp);
         }
-        //
         GUI.skin.box.normal.background = back;
         GUI.skin.box.fontSize = 15;
+
     }
 
+    public void Fade()
+    {
+        obje.guiTexture.enabled = true;
+        timer = new System.Timers.Timer(3);
+        timer.Elapsed += new ElapsedEventHandler(FlashHelp);
+        timer.Enabled = true;
+
+    }
+    void FlashHelp(object source, ElapsedEventArgs e)
+    {
+        helper = true;
+        timer.Enabled = false;
+    }
+    void OnDestroy()
+    {
+        obje.guiTexture.enabled = false;
+    }
 
 }
