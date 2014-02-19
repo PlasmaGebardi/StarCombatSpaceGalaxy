@@ -6,25 +6,61 @@ public class BossScript : MonoBehaviour {
 
     private System.Timers.Timer aTimer;
     private System.Timers.Timer bTimer;
+    private System.Timers.Timer cTimer;
     public int time = 5000;
     private EnemyMove moveScript;
     private bool bossDead = false;
-   
-    
+    private bool bossStopped = false;
+    private bool help = true;
+    private ScrollingScript scrollingScript;
+
+    void Start() {
+        cTimer = new System.Timers.Timer(3000);
+        cTimer.Elapsed += new ElapsedEventHandler(BossMovement);
+        cTimer.Enabled = true;
+        GameObject player = GameObject.Find("Player");
+        scrollingScript = player.GetComponent<ScrollingScript>();
+    }
     void Update()
     {
-        if (renderer.IsVisibleFrom(Camera.main) == true)
+        if (renderer.IsVisibleFrom(Camera.main) == true & bossStopped == false)
         {
             moveScript = GetComponent<EnemyMove>();
             aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             aTimer.Interval = time;
             aTimer.Enabled = true;
+            bossStopped = true;
         }
+
         if (bossDead)
         {
             Application.LoadLevel("Intro");
             Destroy(gameObject);
+        }
+
+        if (bossStopped)
+        {
+            scrollingScript.enabled = false;
+            if (help)
+            {
+                moveScript.direction.y = -1f;
+                moveScript.speed.y = 2;
+                help = false;
+            }
+        }
+
+    }
+
+    void BossMovement(object source, ElapsedEventArgs e)
+    {
+        if (moveScript.direction.y == -1f)
+        {
+            moveScript.direction.y = 1f;
+        }
+        else 
+        {
+            moveScript.direction.y = -1f;
         }
     }
 
@@ -34,8 +70,10 @@ public class BossScript : MonoBehaviour {
         moveScript.speed.x = 1f;
         moveScript.speed.y = 1f;
         moveScript.direction.y = 0f;
-        moveScript.direction.x = 0.1f;
+        moveScript.direction.x = 0f;
         aTimer.Enabled = false;
+        bossStopped = true;
+
     }
 
     public void OnDeath()
