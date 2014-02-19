@@ -72,12 +72,9 @@ public class HealthScript : MonoBehaviour {
                     }
                     if (!bossScript)
                     {
-                        if (hp <= 0)
-                        {
                             SpecialEffectsHelper.Instance.Explosion(transform.position);
                             SoundEffectsHelper.Instance.MakeExplosionSound();
                             Destroy(gameObject);
-                        }
                     }
                     else
                     {
@@ -97,15 +94,12 @@ public class HealthScript : MonoBehaviour {
                     playerScript.Fade();
                 }
                 // upon collision, check if collible object
-				if (health.isEnemy) {
+				if (!health.isEnemy) {
                     if (!bossScript)
                     {
-                        if (hp <= 0)
-                        {
                             SpecialEffectsHelper.Instance.Explosion(transform.position);
                             SoundEffectsHelper.Instance.MakeExplosionSound();
                             Destroy(gameObject);
-                        }
                     }
                     else
                     {
