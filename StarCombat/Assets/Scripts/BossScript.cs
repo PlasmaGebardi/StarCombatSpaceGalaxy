@@ -4,19 +4,27 @@ using System.Timers;
 
 public class BossScript : MonoBehaviour {
 
-    System.Timers.Timer aTimer = new System.Timers.Timer();
+    private System.Timers.Timer aTimer;
+    private System.Timers.Timer bTimer;
     public int time = 5000;
     private EnemyMove moveScript;
-
+    private bool bossDead = false;
+   
+    
     void Update()
     {
         if (renderer.IsVisibleFrom(Camera.main) == true)
         {
             moveScript = GetComponent<EnemyMove>();
-            //System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             aTimer.Interval = time;
             aTimer.Enabled = true;
+        }
+        if (bossDead)
+        {
+            Application.LoadLevel("Intro");
+            Destroy(gameObject);
         }
     }
 
@@ -34,6 +42,23 @@ public class BossScript : MonoBehaviour {
     {
         SpecialEffectsHelper.Instance.Explosion(transform.position);
         SoundEffectsHelper.Instance.MakeExplosionSound();
-        Destroy(gameObject);
+        
+        //Destroy(gameObject);
+        //Remove the sprite, otherwise level won't change since script stops running
+        gameObject.renderer.enabled = false;
+        System.Console.Write("Boss death");
+        bTimer = new System.Timers.Timer();
+        bTimer.Elapsed += new ElapsedEventHandler(SceneTransfer);
+        bTimer.Interval = 5000;
+        bTimer.Enabled = true;
+
+    }
+
+    void SceneTransfer(object source, ElapsedEventArgs e)
+    {
+        Debug.Log("Transfering");
+        bTimer.Enabled = false;
+        bossDead = true;
+
     }
 }
