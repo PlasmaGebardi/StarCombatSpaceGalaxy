@@ -72,9 +72,12 @@ public class HealthScript : MonoBehaviour {
                     }
                     if (!bossScript)
                     {
-                        SpecialEffectsHelper.Instance.Explosion(transform.position);
-                        SoundEffectsHelper.Instance.MakeExplosionSound();
-                        Destroy(gameObject);
+                        if (hp <= 0)
+                        {
+                            SpecialEffectsHelper.Instance.Explosion(transform.position);
+                            SoundEffectsHelper.Instance.MakeExplosionSound();
+                            Destroy(gameObject);
+                        }
                     }
                     else
                     {
@@ -97,9 +100,12 @@ public class HealthScript : MonoBehaviour {
 				if (health.isEnemy) {
                     if (!bossScript)
                     {
-                        SpecialEffectsHelper.Instance.Explosion(transform.position);
-                        SoundEffectsHelper.Instance.MakeExplosionSound();
-                        Destroy(gameObject);
+                        if (hp <= 0)
+                        {
+                            SpecialEffectsHelper.Instance.Explosion(transform.position);
+                            SoundEffectsHelper.Instance.MakeExplosionSound();
+                            Destroy(gameObject);
+                        }
                     }
                     else
                     {
