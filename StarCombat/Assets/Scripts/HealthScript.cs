@@ -19,6 +19,8 @@ public class HealthScript : MonoBehaviour {
     // damage inflicted on collision
     public int collDam = 1;
 
+    public Transform dropObject;
+
     //Store weaponscripts
     private WeaponScript weaponscript;
     private Asteroidittaja asteroidittaja;
@@ -31,7 +33,7 @@ public class HealthScript : MonoBehaviour {
         HealthScript health = collider.gameObject.GetComponent<HealthScript>();
         weaponscript = GetComponentInChildren<WeaponScript>();
         asteroidittaja = GetComponent<Asteroidittaja>();
-
+        Vector2 pos = transform.position;
         if(GetComponent<BossScript>())
         {
             bossScript = GetComponent<BossScript>();
@@ -74,6 +76,11 @@ public class HealthScript : MonoBehaviour {
                     {
                             SpecialEffectsHelper.Instance.Explosion(transform.position);
                             SoundEffectsHelper.Instance.MakeExplosionSound();
+                            if (dropObject)
+                            {
+                                GameObject objt = Instantiate(dropObject) as GameObject;
+                                objt.transform.position = pos;
+                            }
                             Destroy(gameObject);
                     }
                     else
@@ -99,7 +106,13 @@ public class HealthScript : MonoBehaviour {
                     {
                             SpecialEffectsHelper.Instance.Explosion(transform.position);
                             SoundEffectsHelper.Instance.MakeExplosionSound();
+                                if (dropObject)
+                                {
+                                    var dropTransform = Instantiate(dropObject) as Transform;
+                                    dropTransform.position = transform.position;
+                                }
                             Destroy(gameObject);
+
                     }
                     else
                     {
