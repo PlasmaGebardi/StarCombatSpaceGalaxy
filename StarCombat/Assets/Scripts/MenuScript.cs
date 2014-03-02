@@ -24,6 +24,22 @@ public class MenuScript : MonoBehaviour {
         {   // launch the first (currently only level)
             Application.LoadLevel("Intro");
         }
+
+        if (GUI.Button(
+                new Rect(
+                    //Screen.width - (buttonWidth*3),
+                    Screen.width / 2 - (buttonWidth / 2),
+                    Screen.height - (buttonHeight*2),
+                    buttonWidth,
+                    buttonHeight
+                    ),
+                "Exit"
+            )
+        )
+        {
+            Application.Quit();
+        }
+
     }
 
 
