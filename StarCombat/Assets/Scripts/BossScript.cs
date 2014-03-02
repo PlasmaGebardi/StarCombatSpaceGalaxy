@@ -19,7 +19,7 @@ public class BossScript : MonoBehaviour {
     private float counter = 0;
     private float counter2 = 0;
     private bool dash = true;
-    
+    private WeaponScript[] weapons;
 
     void Start() {
         cTimer = new System.Timers.Timer(3000);
@@ -28,7 +28,7 @@ public class BossScript : MonoBehaviour {
         GameObject player = GameObject.Find("Player");
         boss = GameObject.Find("AlffaBossi");
         scrollingScript = player.GetComponent<ScrollingScript>();
-
+        weapons = GetComponentsInChildren<WeaponScript>();
         moveScript = GetComponent<EnemyMove>();
         aTimer = new System.Timers.Timer();
         aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
@@ -47,7 +47,7 @@ public class BossScript : MonoBehaviour {
         counter2 += Time.deltaTime;
         if (bossDead)
         {
-            Application.LoadLevel("Intro");
+            Application.LoadLevel("Outro");
             Destroy(gameObject);
         }
 
@@ -127,8 +127,13 @@ public class BossScript : MonoBehaviour {
         SoundEffectsHelper.Instance.MakeExplosionSound();
         
         //Destroy(gameObject);
+        foreach(WeaponScript weapon in weapons)
+        {
+            weapon.enabled = false;
+        }
         //Remove the sprite, otherwise level won't change since script stops running
         gameObject.renderer.enabled = false;
+
         System.Console.Write("Boss death");
         bTimer = new System.Timers.Timer();
         bTimer.Elapsed += new ElapsedEventHandler(SceneTransfer);
