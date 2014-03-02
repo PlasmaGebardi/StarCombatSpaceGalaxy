@@ -26,6 +26,12 @@ public class HealthScript : MonoBehaviour {
     private Asteroidittaja asteroidittaja;
     private BossScript bossScript;
     private PlayerScript playerScript;
+    private Vector2 pos;
+
+    void Update()
+    {
+        pos = transform.position;
+    }
     void OnTriggerEnter2D(Collider2D collider)
     {
         // is it a shot?
@@ -33,7 +39,6 @@ public class HealthScript : MonoBehaviour {
         HealthScript health = collider.gameObject.GetComponent<HealthScript>();
         weaponscript = GetComponentInChildren<WeaponScript>();
         asteroidittaja = GetComponent<Asteroidittaja>();
-        Vector2 pos = transform.position;
         if(GetComponent<BossScript>())
         {
             bossScript = GetComponent<BossScript>();
@@ -78,7 +83,7 @@ public class HealthScript : MonoBehaviour {
                             SoundEffectsHelper.Instance.MakeExplosionSound();
                             if (dropObject)
                             {
-                                GameObject objt = Instantiate(dropObject) as GameObject;
+                                var objt = Instantiate(dropObject) as Transform;
                                 objt.transform.position = pos;
                             }
                             Destroy(gameObject);
@@ -106,11 +111,11 @@ public class HealthScript : MonoBehaviour {
                     {
                             SpecialEffectsHelper.Instance.Explosion(transform.position);
                             SoundEffectsHelper.Instance.MakeExplosionSound();
-                                if (dropObject)
-                                {
-                                    var dropTransform = Instantiate(dropObject) as Transform;
-                                    dropTransform.position = transform.position;
-                                }
+                            if (dropObject)
+                            {
+                                var objt = Instantiate(dropObject) as Transform;
+                                objt.transform.position = pos;
+                            }
                             Destroy(gameObject);
 
                     }

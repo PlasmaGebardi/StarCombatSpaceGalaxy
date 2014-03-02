@@ -137,7 +137,6 @@ public class BossScript : MonoBehaviour {
 
     void SceneTransfer(object source, ElapsedEventArgs e)
     {
-        Debug.Log("Transfering");
         bTimer.Enabled = false;
         bossDead = true;
 
