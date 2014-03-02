@@ -62,12 +62,11 @@ public class BossScript : MonoBehaviour {
             //Debug.Log(a);
             if (a == 10)
             {
-                //Debug.Log("no voi vitunvitunvittuhelvetti saatanan VITTU");
                 BossDash();
                 counter = 0;
             }
-
-            if (moveScript.direction.x == 1f & transform.position.x > 9f)
+        var dist = (transform.position - Camera.main.transform.position).z;
+            if (moveScript.direction.x == 1f & transform.position.x > Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x)
             {
                 moveScript.direction.x = 0;
 
@@ -76,6 +75,8 @@ public class BossScript : MonoBehaviour {
                 else moveScript.direction.y = -1f;
                 cTimer.Enabled = true;
             }
+
+
     }
 
     void BossMovement(object source, ElapsedEventArgs e)
