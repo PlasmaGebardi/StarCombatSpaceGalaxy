@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Intro.unity
   - enabled: 1
     path: Assets/Outro.unity
+  - enabled: 1
+    path: Assets/Credits.unity

@@ -9,7 +9,7 @@ public class MenuScript : MonoBehaviour {
     {
         // button size
         const int buttonWidth = 200;
-        const int buttonHeight = 100;
+        const int buttonHeight = 50;
 
         if (GUI.Button(
             new Rect(
@@ -23,6 +23,20 @@ public class MenuScript : MonoBehaviour {
         )
         {   // launch the first (currently only level)
             Application.LoadLevel("Intro");
+        }
+
+        if (GUI.Button(
+             new Rect(
+                 Screen.width / 2 - (buttonWidth / 2),
+                (2*  Screen.height / 3) + 37,
+                buttonWidth,
+                buttonHeight
+                ),
+        "Credits"
+          )
+        )
+        {   // launch the first (currently only level)
+            Application.LoadLevel("Credits");
         }
 
         if (GUI.Button(
