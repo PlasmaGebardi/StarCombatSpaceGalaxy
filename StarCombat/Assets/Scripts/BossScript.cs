@@ -70,6 +70,7 @@ public class BossScript : MonoBehaviour {
             if (moveScript.direction.x == 1f & transform.position.x > 9f)
             {
                 moveScript.direction.x = 0;
+
                 int random = Random.Range(1, 100);
                 if (random < 50) moveScript.direction.y = 1f;
                 else moveScript.direction.y = -1f;
@@ -93,7 +94,7 @@ public class BossScript : MonoBehaviour {
     {
         
         cTimer.Enabled = false;
-        dTimer = new System.Timers.Timer(2000);
+        dTimer = new System.Timers.Timer(1000);
         dTimer.Elapsed += new ElapsedEventHandler(BossDashHelp);
         dTimer.Enabled = true;
         posX = moveScript.direction.y;
