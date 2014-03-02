@@ -174,7 +174,7 @@ MonoBehaviour:
   isAsteroid: 0
   isSplit: 0
   collDam: 1
-  dropObject: {fileID: 100000, guid: 21d8187c90a4ac041b1b47695cb56f7f, type: 2}
+  dropObject: {fileID: 400000, guid: 21d8187c90a4ac041b1b47695cb56f7f, type: 2}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
