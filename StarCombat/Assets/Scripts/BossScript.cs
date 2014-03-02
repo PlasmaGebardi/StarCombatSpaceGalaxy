@@ -51,7 +51,7 @@ public class BossScript : MonoBehaviour {
             Destroy(gameObject);
         }
 
-            scrollingScript.enabled = false;
+            //scrollingScript.enabled = false;
             if (help)
             {
                 moveScript.direction.y = -1f;

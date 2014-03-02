@@ -125,10 +125,15 @@ public class HealthScript : MonoBehaviour {
                             Destroy(gameObject);
 
                     }
-                    else
+                    /*else
                     {
-                        bossScript.OnDeath();
-                    };
+                        //bossScript.OnDeath();
+                        if (playerScript)
+                        {
+                            Debug.Log("marlo on paska homo");
+                            playerScript.Kuole();
+                        }
+                    };*/
                 }
 
                 // destroy player if health reaches zero

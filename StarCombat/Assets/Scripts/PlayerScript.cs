@@ -115,9 +115,10 @@ public class PlayerScript : MonoBehaviour
         helper = true;
         timer.Enabled = false;
     }
-    void OnDestroy()
+   /* void OnDestroy()
     {
         obje.guiTexture.enabled = false;
-    }
+    }*/
 
+    public void Kuole() { Destroy(gameObject); }
 }
