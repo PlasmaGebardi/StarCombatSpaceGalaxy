@@ -19,6 +19,10 @@ public class HealthScript : MonoBehaviour {
     // damage inflicted on collision
     public int collDam = 1;
 
+    // drop chance
+    public float dropChance = 0.3f;
+    
+
     public Transform dropObject;
 
     //Store weaponscripts
@@ -31,6 +35,7 @@ public class HealthScript : MonoBehaviour {
     void Update()
     {
         pos = transform.position;
+        if (hp > maxhp) { hp = maxhp; }
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -79,9 +84,10 @@ public class HealthScript : MonoBehaviour {
                     }
                     if (!bossScript)
                     {
+                            float dropRoll = Random.Range(0.0f, 1.0f);
                             SpecialEffectsHelper.Instance.Explosion(transform.position);
                             SoundEffectsHelper.Instance.MakeExplosionSound();
-                            if (dropObject)
+                            if (dropObject && dropRoll < dropChance)
                             {
                                 var objt = Instantiate(dropObject) as Transform;
                                 objt.transform.position = pos;
